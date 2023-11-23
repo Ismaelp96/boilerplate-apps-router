@@ -40,10 +40,107 @@ export const IconWrapper = styled.div`
   `}
 `
 
+export const MenuNav = styled.div``
+export const MenuLink = styled.a`
+  ${({ theme }) => css`
+    position: relative;
+    font-size: ${theme.font.sizes.medium};
+    margin: 0.3rem ${theme.spacings.small} 0;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -0.4rem;
+        display: block;
+        height: 0.3rem;
+        background-color: ${theme.colors.primary};
+        animation: hoverAnimation 0.3s forwards;
+      }
+
+      @keyframes hoverAnimation {
+        from {
+          width: 0;
+          left: 50%;
+        }
+        to {
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+  `}
+`
+
 type MenuFullProps = { isOpen: boolean }
 
 export const MenuFull = styled.nav<MenuFullProps>`
-  ${({ isOpen }) => css`
+  ${({ isOpen, theme }) => css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     opacity: ${isOpen ? 1 : 0};
+    pointer-events: ${isOpen ? 'all' : 'none'};
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-color: ${theme.colors.white};
+    overflow: hidden;
+    > svg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: ${theme.spacings.xsmall};
+      cursor: pointer;
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+    ${MenuNav} {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      justify-content: center;
+      flex-direction: column;
+    }
+    ${MenuLink} {
+      color: ${theme.colors.black};
+      font-weight: ${theme.font.bold};
+      font-size: ${theme.font.sizes.xlarge};
+      margin-bottom: ${theme.spacings.small};
+    }
+  `}
+`
+
+export const RegisterBox = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 ${theme.spacings.xlarge} ${theme.spacings.xlarge};
+
+    > span {
+      display: block;
+      margin: ${theme.spacings.xxsmall} 0;
+      font-size: ${theme.font.sizes.xsmall};
+    }
+  `}
+`
+
+export const CreateAccount = styled.a`
+  ${({ theme }) => css`
+    text-decoration: none;
+    color: ${theme.colors.black};
+    transition: all 0.3s linear;
+    border-bottom: 0.2rem solid ${theme.colors.black};
+    &:hover {
+      color: ${theme.colors.primary};
+      border-color: ${theme.colors.primary};
+    }
   `}
 `

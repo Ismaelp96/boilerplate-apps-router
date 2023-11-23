@@ -46,6 +46,11 @@ export const Wrapper = styled.button<WrapperProps>`
     border-radius: ${theme.border.radius};
     padding: ${theme.spacings.xxsmall};
     cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
 
     ${!!size && wapperModifiers[size](theme)};
     ${!!fullWidth && wapperModifiers.fullWidth()}
