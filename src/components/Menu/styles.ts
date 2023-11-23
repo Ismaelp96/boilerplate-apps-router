@@ -12,19 +12,19 @@ export const Wrapper = styled.menu`
 `
 
 export const LogoWrapper = styled.div`
+  display: flex;
+  align-items: center;
   ${media.lessThan('medium')`
         position: absolute;
         left: 50%;
-        transform: translateX(-50%)
+        transform: translate(-50%)
     `}
 `
 
 export const MenuGroup = styled.div`
   ${({ theme }) => css`
     display: flex;
-    flex-grow: 1;
-    justify-content: flex-end;
-
+    align-items: center;
     > div {
       margin-left: ${theme.spacings.xsmall};
     }
@@ -40,7 +40,9 @@ export const IconWrapper = styled.div`
   `}
 `
 
-export const MenuNav = styled.div``
+export const MenuNav = styled.div`
+  margin-left: 3.6rem;
+`
 export const MenuLink = styled.a`
   ${({ theme }) => css`
     position: relative;
@@ -48,6 +50,7 @@ export const MenuLink = styled.a`
     margin: 0.3rem ${theme.spacings.small} 0;
     text-align: center;
     text-decoration: none;
+    color: ${theme.colors.white};
 
     &:hover {
       &:after {
