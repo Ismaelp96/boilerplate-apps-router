@@ -13,10 +13,8 @@ const Ribbon = ({
   color = 'primary',
   size = 'normal'
 }: RibbonProps) => (
-  <S.Wrapper>
-    <S.RibbonWrapper color={color} size={size}>
-      {children}
-    </S.RibbonWrapper>
+  <S.Wrapper color={color} size={size}>
+    {children}
   </S.Wrapper>
 )
 

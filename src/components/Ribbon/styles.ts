@@ -35,14 +35,7 @@ const wrapperModifiers = {
   `
 }
 
-export const Wrapper = styled.div`
-  width: 40rem;
-  height: 25rem;
-  position: relative;
-  background-color: '#888888';
-`
-
-export const RibbonWrapper = styled.div<Omit<RibbonProps, 'children'>>`
+export const Wrapper = styled.div<Omit<RibbonProps, 'children'>>`
   ${({ theme, color, size }) => css`
     position: absolute;
     top: ${theme.spacings.xsmall};
