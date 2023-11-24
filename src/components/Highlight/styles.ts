@@ -5,7 +5,7 @@ import media from 'styled-media-query'
 type WrapperProps = Pick<HighlightProps, 'backgroundImage'>
 
 export const Wrapper = styled.section<WrapperProps>`
-  ${({ theme, backgroundImage }) => css`
+  ${({ backgroundImage }) => css`
     position: relative;
     background-image: url(${backgroundImage});
     background-position: center center;
@@ -13,6 +13,8 @@ export const Wrapper = styled.section<WrapperProps>`
     background-size: cover;
     height: 23rem;
     display: grid;
+    grid-template-areas: 'floatimage content';
+    grid-template-columns: 1.3fr 2fr;
 
     &::after {
       content: '';
@@ -27,9 +29,22 @@ export const Wrapper = styled.section<WrapperProps>`
   `}
 `
 
+export const FloatImage = styled.img`
+  ${({ theme }) => css`
+    grid-area: floatimage;
+    z-index: ${theme.layers.base};
+    max-height: 23rem;
+    align-self: end;
+    ${media.greaterThan('medium')`
+    max-height: 32rem;
+    `}
+  `}
+`
+
 export const Content = styled.div`
   ${({ theme }) => css`
     z-index: ${theme.layers.base};
+    grid-area: content;
     text-align: right;
     padding-top: 1.9rem;
     padding-right: 2.2rem;
