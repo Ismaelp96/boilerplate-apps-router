@@ -12,7 +12,8 @@ export default {
     promotionalPrice: 'R$ 200,00'
   },
   argTypes: {
-    onFav: { action: 'clicked' }
+    onFav: { action: 'clicked' },
+    ribbon: { type: 'string' }
   },
   parameters: {
     backgrounds: {
@@ -22,3 +23,11 @@ export default {
 } as Meta
 
 export const Default: StoryObj<GameCardProps> = {}
+
+export const WithRibbon: StoryObj = {}
+
+WithRibbon.args = {
+  ribbon: '20% OFF',
+  ribbonSize: 'normal',
+  ribbonColor: 'primary'
+}
