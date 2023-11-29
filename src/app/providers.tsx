@@ -8,9 +8,9 @@ import theme from '@/styles/theme'
 export function Providers({ children }: PropsWithChildren) {
   return (
     <>
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      {children}
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        {children}
       </ThemeProvider>
     </>
   )

@@ -35,6 +35,7 @@ const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
+
   ${({ theme }) => css`
     html {
       font-size: 62.5%;
