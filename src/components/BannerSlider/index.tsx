@@ -1,12 +1,12 @@
 import Banner, { BannerProps } from '../Banner'
-import Slider, { sliderSettings } from '../Slider'
+import Slider, { SliderSettings } from '../Slider'
 import * as S from './styles'
 
 export type BannerSliderProps = {
   items: BannerProps[]
 }
 
-const settings: sliderSettings = {
+const settings: SliderSettings = {
   dots: true,
   arrows: false,
   vertical: true,
